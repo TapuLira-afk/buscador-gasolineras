@@ -221,6 +221,7 @@ function añadirEntradaTabla(gasolinera, destacada) {
     }
 
     const valores = [
+        gasolinera["C.P."],
         gasolinera.Rótulo,
         gasolinera.Dirección,
         gasolinera.Municipio,
