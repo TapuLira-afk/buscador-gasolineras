@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,32 +11,62 @@
 
 <body>
     <h1 id="tittle">Gasolineras España</h1>
+
     <section id="selecciones">
         <form id="form">
             <label for="provincias">
-                <select name="provincias" id="provincias">
-                    <option selected>Selecciona una opcion:</option>
+                <select name="provincias" id="provincias" disabled>
+                    <option value="">Seleccione una opcion</option>
                 </select>
             </label>
+
             <label for="municipios">
-                <select name="municipios" id="municipios">
-                    <option selected>Selecciona una opcion:</option>
+                <select name="municipios" id="municipios" disabled>
+                    <option value="">Seleccione una opcion</option>
                 </select>
             </label>
+
             <label for="combustibles">
-                <select name="combustibles" id="combustibles">
-                    <option selected>Selecciona una opcion:</option>
+                <select name="combustibles" id="combustibles" disabled>
+                    <option value="">Seleccione una opcion</option>
                 </select>
             </label>
+
+            <label for="orden">
+                <select name="orden" id="orden">
+                    <option value="asc">Precio: menor a mayor</option>
+                    <option value="desc">Precio: mayor a menor</option>
+                </select>
+            </label>
+
             <label for="abierto">
-                <input type="checkbox" id="abierto">
+                <input type="checkbox" id="abierto" name="abierto">
                 Abierto ahora
             </label>
-            <button id="button" type="submit">Buscar</button>
+
+            <button id="button" type="submit" disabled>Buscar</button>
         </form>
+
+        <p id="cargando" role="status" aria-live="polite"></p>
     </section>
-    <section>
-        
+
+    <section id="resultados" hidden>
+        <p id="mensaje" role="status" aria-live="polite"></p>
+
+        <table id="tabla-gasolineras" hidden>
+            <thead>
+                <tr>
+                    <th scope="col">Rotulo</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Localidad</th>
+                    <th scope="col">Horario</th>
+                    <th scope="col">Estado de apertura</th>
+                    <th scope="col">Precio del combustible</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo-tabla">
+            </tbody>
+        </table>
     </section>
 </body>
 
